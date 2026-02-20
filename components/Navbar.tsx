@@ -15,16 +15,16 @@ export default function Navbar() {
         />
       </Link>
 
-      <nav className="flex items-center gap-8">
+      <nav className="flex items-center gap-3 sm:gap-8">
         <a
           href="#how-it-works"
-          className="font-inter text-[11px] font-medium text-secondary tracking-[0.12em] uppercase hover:text-primary transition-colors duration-200"
+          className="hidden sm:block font-inter text-[11px] font-medium text-secondary tracking-[0.12em] uppercase hover:text-primary transition-colors duration-200"
         >
           How It Works
         </a>
         <a
           href="#agents"
-          className="font-inter text-[11px] font-medium text-secondary tracking-[0.12em] uppercase hover:text-primary transition-colors duration-200"
+          className="hidden sm:block font-inter text-[11px] font-medium text-secondary tracking-[0.12em] uppercase hover:text-primary transition-colors duration-200"
         >
           Agents
         </a>

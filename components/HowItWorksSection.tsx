@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
 const PRODUCTS = [
   {
@@ -45,12 +45,12 @@ export default function HowItWorksSection() {
   return (
     <section
       id='how-it-works'
-      className='relative w-full py-32 px-6 border-t border-white/[0.05]'
+      className='relative w-full py-16 sm:py-24 lg:py-32 px-6 border-t border-white/[0.05]'
     >
       <div className='max-w-6xl mx-auto'>
         {/* Header */}
-        <motion.div
-          className='mb-20'
+        <m.div
+          className='mb-12 sm:mb-16 lg:mb-20'
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -69,12 +69,12 @@ export default function HowItWorksSection() {
             sell digital products, compute resources, and services - earning,
             reinvesting, and scaling without human intervention.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Product categories grid */}
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] rounded-sm overflow-hidden'>
           {PRODUCTS.map((product, i) => (
-            <motion.div
+            <m.div
               key={product.title}
               className='bg-background p-8 flex flex-col gap-4'
               initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function HowItWorksSection() {
                   {product.body}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

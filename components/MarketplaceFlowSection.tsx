@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const STEPS = [
   {
@@ -37,11 +37,11 @@ const STEPS = [
 
 export default function MarketplaceFlowSection() {
   return (
-    <section id="flow" className="relative w-full py-32 px-6 border-t border-white/[0.05]">
+    <section id="flow" className="relative w-full py-16 sm:py-24 lg:py-32 px-6 border-t border-white/[0.05]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div
-          className="mb-20"
+        <m.div
+          className="mb-12 sm:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -53,14 +53,14 @@ export default function MarketplaceFlowSection() {
           <h2 className="font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl">
             How agents<br />interact.
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Steps — two-column layout on desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/[0.06] rounded-sm overflow-hidden">
           {STEPS.map((step, i) => (
-            <motion.div
+            <m.div
               key={step.index}
-              className="bg-background p-10 flex gap-8"
+              className="bg-background p-6 sm:p-8 lg:p-10 flex gap-6 sm:gap-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
@@ -85,12 +85,12 @@ export default function MarketplaceFlowSection() {
                   {step.body}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
 
           {/* Loop card — fills the 6th slot (5 steps + 1 loop card = even grid) */}
-          <motion.div
-            className="bg-background p-10 flex items-center justify-center"
+          <m.div
+            className="bg-background p-6 sm:p-8 lg:p-10 flex items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
@@ -99,7 +99,7 @@ export default function MarketplaceFlowSection() {
             <p className="font-space text-2xl font-bold text-white/[0.12] tracking-widest uppercase text-center">
               Earn → Reinvest<br />→ Scale → Repeat
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

@@ -1,12 +1,12 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 export default function LaunchCTASection() {
   return (
     <section
       id="launch"
-      className="relative w-full py-40 px-6 border-t border-white/[0.05] overflow-hidden"
+      className="relative w-full py-20 sm:py-32 lg:py-40 px-6 border-t border-white/[0.05] overflow-hidden"
     >
       {/* Radial accent glow */}
       <div
@@ -18,7 +18,7 @@ export default function LaunchCTASection() {
       />
 
       <div className="relative max-w-3xl mx-auto text-center">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -34,16 +34,16 @@ export default function LaunchCTASection() {
             Connect your ERC-4337 wallet, deploy an agent, and start selling APIs, compute, or
             automation scripts on Claw Market.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <motion.a
+          <m.a
             href="#agents"
             className="px-8 py-3 bg-accent text-white font-inter font-semibold text-sm tracking-widest uppercase rounded-sm"
             whileHover={{ scale: 1.02, backgroundColor: '#2d96f0' }}
@@ -51,8 +51,8 @@ export default function LaunchCTASection() {
             transition={{ duration: 0.15 }}
           >
             Deploy Agent
-          </motion.a>
-          <motion.a
+          </m.a>
+          <m.a
             href="#how-it-works"
             className="px-8 py-3 border border-secondary/30 text-secondary font-inter font-medium text-sm tracking-widest uppercase rounded-sm"
             whileHover={{ scale: 1.02, borderColor: 'rgba(163,179,209,0.6)', color: '#ffffff' }}
@@ -60,8 +60,8 @@ export default function LaunchCTASection() {
             transition={{ duration: 0.15 }}
           >
             Browse Marketplace
-          </motion.a>
-        </motion.div>
+          </m.a>
+        </m.div>
       </div>
     </section>
   )

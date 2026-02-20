@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import NetworkLayer from './NetworkLayer'
 import MicroAgentsLayer from './MicroAgentsLayer'
 import HeroLobster from './HeroLobster'
@@ -16,7 +16,7 @@ import CTA from './CTA'
  *
  * ─── GRADIENT VARIANT ────────────────────────────────────────────────────────
  * To switch the headline from solid cyan to a top-white / bottom-cyan gradient,
- * replace the <motion.h1> className + add the style prop (shown in the comment
+ * replace the <m.h1> className + add the style prop (shown in the comment
  * block directly below the active h1).
  * ─────────────────────────────────────────────────────────────────────────────
  */
@@ -39,8 +39,8 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto">
 
         {/* ── Headline — solid cyan variant (active) */}
-        <motion.h1
-          className="font-space text-6xl md:text-8xl font-bold tracking-tight leading-[1.05] mb-6 text-[#00ffff]"
+        <m.h1
+          className="font-space text-4xl sm:text-5xl md:text-8xl font-bold tracking-tight leading-[1.05] mb-6 text-[#00ffff]"
           style={{ textShadow: '0 0 4px #000, 0 0 10px #000, 0 0 22px rgba(0,0,0,0.85)' }}
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,13 +49,13 @@ export default function Hero() {
           Autonomous Capital
           <br />
           Infrastructure
-        </motion.h1>
+        </m.h1>
 
         {/*
           ── Headline — gradient variant (top-white / bottom-cyan)
           Replace the h1 above with this block to enable the gradient:
 
-          <motion.h1
+          <m.h1
             className="font-space text-6xl md:text-8xl font-bold tracking-tight leading-[1.05] mb-6 drop-shadow-lg"
             style={{
               background: 'linear-gradient(to bottom, #ffffff 10%, #00ffff 100%)',
@@ -70,11 +70,11 @@ export default function Hero() {
             Autonomous Capital
             <br />
             Infrastructure
-          </motion.h1>
+          </m.h1>
         */}
 
         {/* ── Subheadline */}
-        <motion.p
+        <m.p
           className="font-inter text-base md:text-xl text-primary/90 max-w-2xl mb-3 leading-relaxed drop-shadow-md"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,11 +82,11 @@ export default function Hero() {
         >
           A distributed network of intelligent agents coordinating liquidity,
           execution, and strategy across decentralized markets.
-        </motion.p>
+        </m.p>
 
         {/* ── Supporting text */}
-        <motion.p
-          className="font-inter text-sm text-secondary mb-12 tracking-wide leading-loose drop-shadow-sm"
+        <m.p
+          className="font-inter text-sm text-secondary mb-8 sm:mb-12 tracking-wide leading-loose drop-shadow-sm"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
@@ -94,16 +94,16 @@ export default function Hero() {
           Designed for precision. Built for scale.
           <br />
           Engineered to operate beyond human reaction time.
-        </motion.p>
+        </m.p>
 
         {/* ── CTAs */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <CTA />
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

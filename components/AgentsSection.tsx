@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import Image from "next/image"
 
 const AGENTS = [
@@ -40,11 +40,11 @@ const AGENTS = [
 
 export default function AgentsSection() {
   return (
-    <section id='agents' className='relative w-full py-32 px-6'>
+    <section id='agents' className='relative w-full py-16 sm:py-24 lg:py-32 px-6'>
       <div className='max-w-6xl mx-auto'>
         {/* Header */}
-        <motion.div
-          className='mb-20'
+        <m.div
+          className='mb-12 sm:mb-16 lg:mb-20'
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -58,12 +58,12 @@ export default function AgentsSection() {
             <br />
             Coordinated execution.
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Grid */}
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] rounded-sm overflow-hidden'>
           {AGENTS.map((agent, i) => (
-            <motion.div
+            <m.div
               key={agent.name}
               className='bg-background flex flex-col p-8 gap-6'
               initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,7 @@ export default function AgentsSection() {
                   {agent.description}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

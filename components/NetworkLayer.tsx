@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Image from 'next/image'
 
 /**
@@ -15,7 +15,7 @@ const SRC =
 
 export default function NetworkLayer() {
   return (
-    <motion.div
+    <m.div
       className="absolute inset-0 z-0 pointer-events-none"
       animate={{ x: [0, -24, 0] }}
       transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
@@ -29,6 +29,6 @@ export default function NetworkLayer() {
         priority
         aria-hidden
       />
-    </motion.div>
+    </m.div>
   )
 }

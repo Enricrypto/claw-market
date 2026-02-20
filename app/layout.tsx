@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Space_Grotesk, Inter } from "next/font/google"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import MotionProvider from "@/components/MotionProvider"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
@@ -36,9 +37,11 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} scroll-smooth`}
     >
       <body className='font-inter antialiased bg-background text-primary'>
-        <Navbar />
-        {children}
-        <Footer />
+        <MotionProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   )

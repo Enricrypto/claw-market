@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { m, useMotionValue, useSpring } from 'framer-motion'
 import Image from 'next/image'
 
 /**
@@ -45,22 +45,23 @@ export default function HeroLobster() {
 
   return (
     // Layer A — mouse parallax
-    <motion.div
+    <m.div
       className="absolute inset-0 z-[2] flex items-center justify-center pointer-events-none"
       style={{ x, y, opacity: 0.88, filter: 'brightness(1.6) saturate(0.65)', willChange: 'transform' }}
     >
       {/* Layer B — vertical float */}
-      <motion.div
+      <m.div
         animate={{ y: [0, -14, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         style={{ willChange: 'transform' }}
         className="pointer-events-none"
       >
         {/* Layer C — glow pulse */}
-        <motion.div
+        <m.div
           animate={{ filter: [GLOW_DIM, GLOW_BRIGHT, GLOW_DIM] }}
           transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
           className="relative w-115 h-115 md:w-165 md:h-165 pointer-events-none"
+          style={{ willChange: 'filter' }}
         >
           <Image
             src="/assets/hero-lobster.png"
@@ -69,8 +70,8 @@ export default function HeroLobster() {
             className="object-contain"
             priority
           />
-        </motion.div>
-      </motion.div>
-    </motion.div>
+        </m.div>
+      </m.div>
+    </m.div>
   )
 }

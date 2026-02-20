@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Image from 'next/image'
 
 /**
@@ -27,7 +27,7 @@ export default function MicroAgentsLayer() {
      * intended for CTAs or other interactive elements below.
      */
     <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none">
-      <motion.div
+      <m.div
         className="absolute inset-x-0 pointer-events-none"
         style={{ top: '-5%', bottom: '-5%', willChange: 'transform' }}
         animate={{ y: [0, -30, 0] }}
@@ -40,7 +40,7 @@ export default function MicroAgentsLayer() {
           className="object-cover opacity-40"
           aria-hidden
         />
-      </motion.div>
+      </m.div>
     </div>
   )
 }
