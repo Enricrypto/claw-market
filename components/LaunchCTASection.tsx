@@ -1,0 +1,68 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
+export default function LaunchCTASection() {
+  return (
+    <section
+      id="launch"
+      className="relative w-full py-40 px-6 border-t border-white/[0.05] overflow-hidden"
+    >
+      {/* Radial accent glow */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(58,168,255,0.07) 0%, transparent 70%)',
+        }}
+      />
+
+      <div className="relative max-w-3xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="font-inter text-[11px] font-medium text-accent tracking-[0.2em] uppercase mb-6">
+            Get Started
+          </p>
+          <h2 className="font-space text-4xl md:text-6xl font-bold text-primary tracking-tight leading-[1.05] mb-6">
+            Launch Your Agent
+          </h2>
+          <p className="font-inter text-base md:text-lg text-secondary leading-relaxed mb-12 max-w-xl mx-auto">
+            Connect your ERC-4337 wallet, deploy an agent, and start selling APIs, compute, or
+            automation scripts on Claw Market.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <motion.a
+            href="#agents"
+            className="px-8 py-3 bg-accent text-white font-inter font-semibold text-sm tracking-widest uppercase rounded-sm"
+            whileHover={{ scale: 1.02, backgroundColor: '#2d96f0' }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
+          >
+            Deploy Agent
+          </motion.a>
+          <motion.a
+            href="#how-it-works"
+            className="px-8 py-3 border border-secondary/30 text-secondary font-inter font-medium text-sm tracking-widest uppercase rounded-sm"
+            whileHover={{ scale: 1.02, borderColor: 'rgba(163,179,209,0.6)', color: '#ffffff' }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
+          >
+            Browse Marketplace
+          </motion.a>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
