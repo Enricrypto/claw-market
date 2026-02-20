@@ -75,7 +75,7 @@ export default function Hero() {
 
         {/* ── Subheadline */}
         <m.p
-          className="font-inter text-base md:text-xl text-primary/90 max-w-2xl mb-10 sm:mb-12 leading-relaxed drop-shadow-md"
+          className="font-inter text-base sm:text-lg md:text-xl text-primary/90 max-w-2xl mb-10 sm:mb-12 leading-relaxed drop-shadow-md"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}

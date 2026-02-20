@@ -256,8 +256,8 @@ export default function MarketplaceFlowSection() {
         {/* Two-column interactive layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-          {/* Left — animated visual panel */}
-          <div className="lg:sticky lg:top-24 bg-white/3 border border-white/7 rounded-sm overflow-hidden h-72 lg:h-95">
+          {/* Left — animated visual panel (below steps on mobile, sticky left on desktop) */}
+          <div className="order-2 lg:order-1 lg:sticky lg:top-24 bg-white/3 border border-white/7 rounded-sm overflow-hidden h-72 lg:h-95">
             <AnimatePresence mode="wait">
               <m.div
                 key={active}
@@ -272,8 +272,8 @@ export default function MarketplaceFlowSection() {
             </AnimatePresence>
           </div>
 
-          {/* Right — clickable steps */}
-          <div className="flex flex-col divide-y divide-white/6">
+          {/* Right — clickable steps (first on mobile) */}
+          <div className="order-1 lg:order-2 flex flex-col divide-y divide-white/6">
             {STEPS.map((step, i) => {
               const isActive = active === i
               return (
