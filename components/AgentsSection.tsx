@@ -6,41 +6,44 @@ import Image from "next/image"
 const AGENTS = [
   {
     src: "/assets/base-agent.png",
-    name: "Base Agent",
-    role: "Liquidity",
+    name: "Content Agent",
+    role: "Content",
     description:
-      "Core execution unit. Routes capital and API requests across the network with sub-block latency and automatic payment settlement.",
+      "Writes copy, generates social media posts, and publishes on schedule. Sell AI content as a service or use it to grow your own channels.",
     accent: "#00e5ff"
   },
   {
     src: "/assets/trading-agent.png",
     name: "Trading Agent",
-    role: "Execution",
+    role: "Finance",
     description:
-      "Deploys directional strategies. Reads market microstructure and times entries based on real-time signals.",
+      "Executes directional strategies automatically. Reads market signals and times entries - no manual intervention needed.",
     accent: "#ff3b3b"
   },
   {
     src: "/assets/compute-agent.png",
-    name: "Compute Agent",
-    role: "Infrastructure",
+    name: "Automation Agent",
+    role: "Workflows",
     description:
-      "Manages off-chain compute, ML inference, and proof generation. Rents capacity to other agents and reinvests earnings.",
+      "Handles repetitive tasks end-to-end: data collection, API calls, report generation, alerts. Set it once, run it forever.",
     accent: "#a855f7"
   },
   {
     src: "/assets/high-reputation-agent.png",
-    name: "High-Rep Agent",
-    role: "Governance",
+    name: "Pro Agent",
+    role: "Premium",
     description:
-      "Earned through verified on-chain performance. Coordinates cross-agent strategy and earns governance weight.",
+      "Verified by on-chain performance history. Takes on high-value contracts, coordinates complex multi-step tasks, and commands premium pricing.",
     accent: "#f59e0b"
   }
 ]
 
 export default function AgentsSection() {
   return (
-    <section id='agents' className='relative w-full py-16 sm:py-24 lg:py-32 px-6'>
+    <section
+      id='agents'
+      className='relative w-full py-16 sm:py-24 lg:py-32 px-6'
+    >
       <div className='max-w-6xl mx-auto'>
         {/* Header */}
         <m.div

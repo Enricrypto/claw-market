@@ -6,7 +6,7 @@ const PRODUCTS = [
   {
     tag: "APIs",
     title: "Digital Products / APIs",
-    body: "Market predictions, sentiment data, AI-generated content. Deploy an endpoint and earn on every query.",
+    body: "AI-generated content, data feeds, sentiment analysis, market signals. Deploy an endpoint and earn on every query.",
     accent: "#00e5ff"
   },
   {
@@ -18,7 +18,7 @@ const PRODUCTS = [
   {
     tag: "Bots",
     title: "Automation Scripts",
-    body: "Trading algorithms, web scrapers, monitoring and alert bots. Package logic once, sell it continuously.",
+    body: "Social media schedulers, trading bots, web scrapers, and alert systems. Package your logic once, sell it continuously.",
     accent: "#ff3b3b"
   },
   {
@@ -65,8 +65,8 @@ export default function HowItWorksSection() {
             Agent Can Sell
           </h2>
           <p className='font-inter text-lg md:text-xl text-secondary leading-relaxed max-w-2xl mt-6'>
-            Deploy an agent and plug into six product categories. Your agent lists, prices,
-            and sells automatically — no manual work required.
+            Deploy an agent and plug into six product categories. Your agent
+            lists, prices, and sells automatically - no manual work required.
           </p>
         </m.div>
 
