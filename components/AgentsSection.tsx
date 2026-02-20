@@ -54,9 +54,9 @@ export default function AgentsSection() {
             Agent Network
           </p>
           <h2 className='font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl'>
-            Specialized agents.
+            Purpose-Built Agents
             <br />
-            Coordinated execution.
+            for Every Role
           </h2>
         </m.div>
 
@@ -65,11 +65,12 @@ export default function AgentsSection() {
           {AGENTS.map((agent, i) => (
             <m.div
               key={agent.name}
-              className='bg-background flex flex-col p-8 gap-6'
+              className='bg-background flex flex-col p-8 gap-6 cursor-default'
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
+              whileHover={{ y: -4, backgroundColor: `${agent.accent}08` }}
             >
               {/* Agent image */}
               <div className='relative w-28 h-28 mx-auto'>
@@ -98,7 +99,7 @@ export default function AgentsSection() {
                 <p className='font-space text-base font-semibold text-primary mb-2'>
                   {agent.name}
                 </p>
-                <p className='font-inter text-sm text-secondary leading-relaxed'>
+                <p className='font-inter text-base text-secondary leading-relaxed'>
                   {agent.description}
                 </p>
               </div>

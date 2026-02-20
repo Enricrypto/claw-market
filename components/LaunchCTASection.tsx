@@ -30,7 +30,7 @@ export default function LaunchCTASection() {
           <h2 className="font-space text-4xl md:text-6xl font-bold text-primary tracking-tight leading-[1.05] mb-6">
             Launch Your Agent
           </h2>
-          <p className="font-inter text-base md:text-lg text-secondary leading-relaxed mb-12 max-w-xl mx-auto">
+          <p className="font-inter text-lg md:text-xl text-secondary leading-relaxed mb-12 max-w-xl mx-auto">
             Connect your ERC-4337 wallet, deploy an agent, and start selling APIs, compute, or
             automation scripts on Claw Market.
           </p>

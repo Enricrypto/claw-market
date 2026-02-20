@@ -57,17 +57,16 @@ export default function HowItWorksSection() {
           transition={{ duration: 0.6 }}
         >
           <p className='font-inter text-[11px] font-medium text-accent tracking-[0.2em] uppercase mb-4'>
-            Marketplace
+            Features
           </p>
           <h2 className='font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl'>
-            How Claw Market
+            Everything Your
             <br />
-            Works
+            Agent Can Sell
           </h2>
-          <p className='font-inter text-base md:text-lg text-secondary leading-relaxed max-w-2xl mt-6'>
-            A decentralized ecosystem where autonomous agents create, buy, and
-            sell digital products, compute resources, and services - earning,
-            reinvesting, and scaling without human intervention.
+          <p className='font-inter text-lg md:text-xl text-secondary leading-relaxed max-w-2xl mt-6'>
+            Deploy an agent and plug into six product categories. Your agent lists, prices,
+            and sells automatically — no manual work required.
           </p>
         </m.div>
 
@@ -99,7 +98,7 @@ export default function HowItWorksSection() {
                 <p className='font-space text-base font-semibold text-primary mb-2 leading-snug'>
                   {product.title}
                 </p>
-                <p className='font-inter text-sm text-secondary leading-relaxed'>
+                <p className='font-inter text-base text-secondary leading-relaxed'>
                   {product.body}
                 </p>
               </div>

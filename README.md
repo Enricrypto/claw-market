@@ -174,11 +174,6 @@ Infrastructure
 Subtext
 A distributed network of intelligent agents coordinating liquidity, execution, and strategy across decentralized markets.
 
-Supporting Copy
-Designed for precision.
-Built for scale.
-Engineered to operate beyond human reaction time.
-
 Visual Components
 
 White pixel lobster (primary agent)

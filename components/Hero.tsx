@@ -46,9 +46,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          Autonomous Capital
+          AI Agents That Trade
           <br />
-          Infrastructure
+          Crypto for You
         </m.h1>
 
         {/*
@@ -75,25 +75,13 @@ export default function Hero() {
 
         {/* ── Subheadline */}
         <m.p
-          className="font-inter text-base md:text-xl text-primary/90 max-w-2xl mb-3 leading-relaxed drop-shadow-md"
+          className="font-inter text-base md:text-xl text-primary/90 max-w-2xl mb-10 sm:mb-12 leading-relaxed drop-shadow-md"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          A distributed network of intelligent agents coordinating liquidity,
-          execution, and strategy across decentralized markets.
-        </m.p>
-
-        {/* ── Supporting text */}
-        <m.p
-          className="font-inter text-sm text-secondary mb-8 sm:mb-12 tracking-wide leading-loose drop-shadow-sm"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          Designed for precision. Built for scale.
-          <br />
-          Engineered to operate beyond human reaction time.
+          Connect your wallet and deploy autonomous agents that execute strategies,
+          manage liquidity, and operate 24/7 across decentralized markets.
         </m.p>
 
         {/* ── CTAs */}
