@@ -107,8 +107,8 @@ const MANIFEST: Entry[] = [
   { kind: 'background', input: 'micro_agents_bg_var1.png', output: 'micro-agents.webp'    },
   { kind: 'background', input: 'micro_agents_bg_var2.png', output: 'micro-agents-v2.webp' },
 
-  // ── Favicon (derives from logo v2)
-  { kind: 'favicon', input: 'claw_marketplace_logov2.png' },
+  // ── Favicon (lobster icon mark)
+  { kind: 'favicon', input: 'logo_master.png' },
 ]
 
 // ─── Luminosity-to-alpha mask ─────────────────────────────────────────────────
