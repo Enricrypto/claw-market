@@ -6,7 +6,6 @@ import CTA from "./CTA"
 export default function Hero() {
   return (
     <section className='relative w-full h-screen overflow-hidden flex items-center justify-center'>
-
       {/* ── Background video */}
       <video
         autoPlay
@@ -20,7 +19,7 @@ export default function Hero() {
       {/* ── Dark overlay for text readability */}
       <div
         className='absolute inset-0 z-1 pointer-events-none'
-        style={{ background: 'rgba(11,13,20,0.55)' }}
+        style={{ background: "rgba(11,13,20,0.55)" }}
       />
 
       {/* ── Radial underlay — dark ellipse centred on the text column */}
@@ -55,9 +54,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          ClawMind orchestrates complex tasks into structured workflows —
-          planning with AI, executing with x402 payments, and composing
-          results into real economic output.
+          ClawMind orchestrates complex tasks into structured workflows -
+          planning with AI, executing with x402 payments, and composing results
+          into real economic output.
         </m.p>
 
         {/* ── CTAs */}

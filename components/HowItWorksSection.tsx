@@ -30,7 +30,7 @@ const PRODUCTS = [
   {
     tag: "Output",
     title: "Result Composition",
-    body: "Merges outputs from each subtask into a single coherent deliverable — report, dataset, content, or action.",
+    body: "Merges outputs from each subtask into a single coherent deliverable - report, dataset, content, or action.",
     accent: "#f59e0b"
   },
   {
