@@ -1,30 +1,40 @@
 "use client"
 
 import { m } from "framer-motion"
+import {
+  CodeBracketIcon,
+  WalletIcon,
+  AdjustmentsHorizontalIcon,
+  BoltIcon
+} from "@heroicons/react/24/solid"
 
 const STEPS = [
   {
     number: "01",
-    title: "Define Your Task",
-    body: "Write any task in natural language. ClawMind handles decomposition, planning, and service selection.",
+    icon: CodeBracketIcon,
+    title: "Get Early Access",
+    body: "Request access and clone the starter repo from GitHub. You'll have your environment ready in minutes.",
     accent: "#00e5ff"
   },
   {
     number: "02",
-    title: "Set Your Budget",
-    body: "Specify a maximum spend. ClawMind builds the most cost-efficient plan that fits your limit.",
+    icon: WalletIcon,
+    title: "Connect Your Wallet",
+    body: "Set up an x402-compatible wallet. ClawMind uses it to pay each service automatically as it completes.",
     accent: "#a855f7"
   },
   {
     number: "03",
-    title: "Execute & Pay",
-    body: "Each step pays for itself along the way - nothing to manage.",
+    icon: AdjustmentsHorizontalIcon,
+    title: "Set a Spending Cap",
+    body: "Define your maximum budget. ClawMind builds the most efficient plan that fits your limit - and never goes over.",
     accent: "#f59e0b"
   },
   {
     number: "04",
-    title: "Collect Output",
-    body: "Receive the composed result and a full cost breakdown showing exactly what each step ran and what the total came to.",
+    icon: BoltIcon,
+    title: "Run Your First Workflow",
+    body: "Submit a task in plain language. ClawMind plans, executes, and delivers the result - automatically.",
     accent: "#ec4899"
   }
 ]
@@ -33,7 +43,7 @@ export default function GetStartedSection() {
   return (
     <section
       id='get-started'
-      className='relative w-full py-16 sm:py-24 lg:py-32 px-6 border-t border-white/[0.05]'
+      className='relative w-full py-16 sm:py-24 lg:py-32 px-6 border-t border-white/5'
     >
       <div className='max-w-6xl mx-auto'>
         {/* Header */}
@@ -48,14 +58,14 @@ export default function GetStartedSection() {
             Get Started
           </p>
           <h2 className='font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl'>
-            From task to result
+            Up and running
             <br />
             in four steps.
           </h2>
         </m.div>
 
         {/* Steps */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] rounded-sm overflow-hidden'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/6 rounded-sm overflow-hidden'>
           {STEPS.map((step, i) => (
             <m.div
               key={step.number}
@@ -72,6 +82,9 @@ export default function GetStartedSection() {
               >
                 {step.number}
               </span>
+
+              {/* Icon */}
+              <step.icon className='w-6 h-6' style={{ color: step.accent }} />
 
               {/* Title + body */}
               <div className='flex flex-col gap-2'>

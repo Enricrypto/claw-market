@@ -32,17 +32,6 @@ export default function Hero() {
       />
 
       <div className='relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto'>
-        {/* ── Problem statement */}
-        <m.p
-          className='font-inter text-sm sm:text-base text-secondary/90 max-w-lg mb-6 leading-relaxed drop-shadow-md'
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          Coordinating AI services across tasks is slow, expensive, and
-          unpredictable.
-        </m.p>
-
         {/* ── Headline */}
         <m.h1
           className='font-space text-4xl sm:text-5xl md:text-8xl font-bold tracking-tight leading-[1.05] mb-6 text-[#00ffff]'
@@ -65,9 +54,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          Describe what you need. ClawMind plans the steps, picks the right
-          tools for each one, pays them as they complete, and delivers a single
-          clean result, always within your budget.
+          Give ClawMind a task - scrape a dataset, analyze a market, generate a
+          report. It builds a step-by-step plan, assigns the right tool to each
+          part, executes them in order, and hands you one clean result - never
+          over budget.
         </m.p>
 
         {/* ── CTAs */}
@@ -86,7 +76,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.85 }}
         >
-          <p className='font-inter text-xs text-secondary/70 tracking-wide drop-shadow-md'>
+          <p className='font-inter text-sm text-secondary/70 tracking-wide drop-shadow-md'>
             Built for developers and operators building AI automation workflows.
           </p>
           <div className='flex flex-wrap items-center justify-center gap-2'>
@@ -94,7 +84,7 @@ export default function Hero() {
               (badge) => (
                 <span
                   key={badge}
-                  className='px-3 py-1 rounded-full border border-white/15 bg-black/30 font-inter text-[11px] text-secondary/75 tracking-wider backdrop-blur-sm'
+                  className='px-3 py-1 rounded-full border border-white/15 bg-black/30 font-inter text-xs text-secondary/75 tracking-wider backdrop-blur-sm'
                 >
                   {badge}
                 </span>

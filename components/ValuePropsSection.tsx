@@ -1,21 +1,29 @@
 "use client"
 
 import { m } from "framer-motion"
+import {
+  CurrencyDollarIcon,
+  ShieldCheckIcon,
+  EyeIcon
+} from "@heroicons/react/24/solid"
 
 const PROPS = [
   {
+    icon: CurrencyDollarIcon,
     stat: "Cost Control",
     headline: "Plans Before It Spends",
     body: "ClawMind maps every step before touching your budget. You know exactly what it will cost before anything runs.",
     accent: "#00e5ff"
   },
   {
+    icon: ShieldCheckIcon,
     stat: "Budget Enforced",
     headline: "Always Within Your Limit",
     body: "Set a spending cap. ClawMind finds the most cost-efficient path to your goal and never exceeds it.",
     accent: "#3aa8ff"
   },
   {
+    icon: EyeIcon,
     stat: "Full Transparency",
     headline: "See Every Dollar, Every Run",
     body: "Every workflow ends with a line-by-line breakdown - what was spent, what came back, and your net gain.",
@@ -36,6 +44,9 @@ export default function ValuePropsSection() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: i * 0.12 }}
           >
+            {/* Icon */}
+            <p.icon className='w-7 h-7' style={{ color: p.accent }} />
+
             {/* Stat / hook */}
             <p
               className='font-space text-lg font-bold tracking-tight'
