@@ -66,7 +66,7 @@ export default function HowItWorksSection() {
           </h2>
           <p className='font-inter text-lg md:text-xl text-secondary leading-relaxed max-w-2xl mt-6'>
             Six modular capabilities that compose into any autonomous economic
-            workflow — from a single API call to a full business operation.
+            workflow - from a single API call to a full business operation.
           </p>
         </m.div>
 
