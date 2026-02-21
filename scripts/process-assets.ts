@@ -107,8 +107,8 @@ const MANIFEST: Entry[] = [
   { kind: 'background', input: 'micro_agents_bg_var1.png', output: 'micro-agents.webp'    },
   { kind: 'background', input: 'micro_agents_bg_var2.png', output: 'micro-agents-v2.webp' },
 
-  // ── Favicon (ClawMind icon mark, left-square crop)
-  { kind: 'favicon', input: 'clawmind-logo.png' },
+  // ── Favicon (dedicated icon, background removed)
+  { kind: 'favicon', input: 'favicon.png' },
 ]
 
 // ─── Luminosity-to-alpha mask ─────────────────────────────────────────────────
