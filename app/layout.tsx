@@ -22,7 +22,11 @@ export const metadata: Metadata = {
   description:
     "ClawMind is the orchestration intelligence layer that plans tasks, executes x402 payments, and composes results into autonomous economic workflows.",
   icons: {
-    icon: "/assets/favicon.ico"
+    icon: [
+      { url: "/assets/favicon.ico" },
+      { url: "/assets/favicon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/assets/favicon-192.png",
   }
 }
 

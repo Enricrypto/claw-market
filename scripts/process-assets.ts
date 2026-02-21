@@ -107,8 +107,8 @@ const MANIFEST: Entry[] = [
   { kind: 'background', input: 'micro_agents_bg_var1.png', output: 'micro-agents.webp'    },
   { kind: 'background', input: 'micro_agents_bg_var2.png', output: 'micro-agents-v2.webp' },
 
-  // ── Favicon (lobster icon mark)
-  { kind: 'favicon', input: 'logo_master.png' },
+  // ── Favicon (ClawMind icon mark, left-square crop)
+  { kind: 'favicon', input: 'clawmind-logo.png' },
 ]
 
 // ─── Luminosity-to-alpha mask ─────────────────────────────────────────────────
@@ -359,7 +359,8 @@ function buildIco(images: Array<{ size: number; data: Buffer }>): Buffer {
 }
 
 async function processFavicon(rawDir: string, input: string): Promise<void> {
-  const dst = path.join(OUT_DIR, 'favicon.ico')
+  const dst    = path.join(OUT_DIR, 'favicon.ico')
+  const dstPng = path.join(OUT_DIR, 'favicon-192.png')
 
   const { data, info } = await sharp(path.join(rawDir, input))
     .ensureAlpha()
@@ -377,19 +378,26 @@ async function processFavicon(rawDir: string, input: string): Promise<void> {
 
   const trimmedPng = await sharp(maskedPng).trim().png().toBuffer()
 
+  // For landscape logotypes (icon + wordmark), crop to the left square
+  // so the favicon shows only the icon mark, not the full wordmark.
+  const trimMeta = await sharp(trimmedPng).metadata()
+  const iconPng =
+    (trimMeta.width ?? 0) > (trimMeta.height ?? 0)
+      ? await sharp(trimmedPng)
+          .extract({ left: 0, top: 0, width: trimMeta.height!, height: trimMeta.height! })
+          .png()
+          .toBuffer()
+      : trimmedPng
+
   const BG = { r: 0, g: 0, b: 0, alpha: 0 }
-  const [png16, png32] = await Promise.all([
-    sharp(trimmedPng)
-      .resize(16, 16, { fit: 'contain', background: BG, kernel: 'lanczos3' })
-      .png()
-      .toBuffer(),
-    sharp(trimmedPng)
-      .resize(32, 32, { fit: 'contain', background: BG, kernel: 'lanczos3' })
-      .png()
-      .toBuffer(),
+  const [png16, png32, png192] = await Promise.all([
+    sharp(iconPng).resize(16,  16,  { fit: 'contain', background: BG, kernel: 'lanczos3' }).png().toBuffer(),
+    sharp(iconPng).resize(32,  32,  { fit: 'contain', background: BG, kernel: 'lanczos3' }).png().toBuffer(),
+    sharp(iconPng).resize(192, 192, { fit: 'contain', background: BG, kernel: 'lanczos3' }).png().toBuffer(),
   ])
 
-  fs.writeFileSync(dst, buildIco([{ size: 16, data: png16 }, { size: 32, data: png32 }]))
+  fs.writeFileSync(dst,    buildIco([{ size: 16, data: png16 }, { size: 32, data: png32 }]))
+  fs.writeFileSync(dstPng, png192)
 }
 
 // ─── Runner ───────────────────────────────────────────────────────────────────
