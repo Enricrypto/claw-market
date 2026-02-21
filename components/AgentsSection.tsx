@@ -9,23 +9,23 @@ const AGENTS = [
     name: "/extract",
     role: "Web & Docs",
     description:
-      "Scrapes and parses any URL or document into structured data. Handles dynamic content and complex selectors.",
+      "Pull data from any website or document - even pages that load dynamically.",
     accent: "#00e5ff"
   },
   {
     src: "/assets/trading-agent.png",
     name: "/fetch",
-    role: "Structured Data",
+    role: "Live Data",
     description:
-      "Queries external APIs and returns normalized JSON. Finance data, on-chain metrics, product databases - any source.",
+      "Pull live data from any API or database - financial feeds, product catalogs, on-chain metrics.",
     accent: "#ff3b3b"
   },
   {
     src: "/assets/compute-agent.png",
     name: "/transform",
-    role: "LLM Operations",
+    role: "AI Processing",
     description:
-      "Summarizes, analyzes, classifies, or generates text from any input. Plugs directly into the orchestration plan.",
+      "Use AI to summarize, analyze, or generate content from any input.",
     accent: "#a855f7"
   },
   {
@@ -33,7 +33,7 @@ const AGENTS = [
     name: "/evaluate",
     role: "Scoring",
     description:
-      "Ranks and scores items against weighted criteria. Used for vendor selection, investment screening, and competitive analysis.",
+      "Score and rank any list against your criteria - vendors, opportunities, competitors.",
     accent: "#f59e0b"
   }
 ]
@@ -54,12 +54,12 @@ export default function AgentsSection() {
           transition={{ duration: 0.6 }}
         >
           <p className='font-inter text-[11px] font-medium text-accent tracking-[0.2em] uppercase mb-4'>
-            Primitives
+            What It Can Do
           </p>
           <h2 className='font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl'>
-            Four Universal
+            Four Tools.
             <br />
-            Building Blocks
+            Any Workflow.
           </h2>
         </m.div>
 

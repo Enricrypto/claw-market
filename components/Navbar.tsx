@@ -29,6 +29,12 @@ export default function Navbar() {
           Agents
         </a>
         <a
+          href="/pricing"
+          className="hidden sm:block font-inter text-[11px] font-medium text-secondary tracking-[0.12em] uppercase hover:text-primary transition-colors duration-200"
+        >
+          Pricing
+        </a>
+        <a
           href="#launch"
           className="font-inter text-[11px] font-semibold text-accent tracking-[0.12em] uppercase border border-accent/30 px-4 py-1.5 rounded-sm hover:bg-accent/10 transition-colors duration-200"
         >

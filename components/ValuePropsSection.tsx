@@ -4,21 +4,21 @@ import { m } from "framer-motion"
 
 const PROPS = [
   {
-    stat: "AI-First Planning",
-    headline: "Structured Before Execution",
-    body: "ClawMind decomposes any task into a validated JSON plan before a single API call is made. No guessing. No waste.",
+    stat: "Cost Control",
+    headline: "Plans Before It Spends",
+    body: "ClawMind maps every step before touching your budget. You know exactly what it will cost before anything runs.",
     accent: "#00e5ff"
   },
   {
-    stat: "Budget-Constrained",
-    headline: "Runs Within Your Limits",
-    body: "Every workflow executes within a predefined cost ceiling. ClawMind selects the cheapest viable service combination automatically.",
+    stat: "Budget Enforced",
+    headline: "Always Within Your Limit",
+    body: "Set a spending cap. ClawMind finds the most cost-efficient path to your goal and never exceeds it.",
     accent: "#3aa8ff"
   },
   {
-    stat: "Profit-Visible",
-    headline: "See Every Dollar Earned",
-    body: "Receive a full breakdown of what was paid, what was earned, and the orchestration margin captured on every run.",
+    stat: "Full Transparency",
+    headline: "See Every Dollar, Every Run",
+    body: "Every workflow ends with a line-by-line breakdown — what was spent, what came back, and your net gain.",
     accent: "#a855f7"
   }
 ]

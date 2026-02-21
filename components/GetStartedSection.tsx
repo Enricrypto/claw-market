@@ -18,7 +18,7 @@ const STEPS = [
   {
     number: '03',
     title: 'Execute & Pay',
-    body: 'Subtasks run sequentially. x402 payments settle on-chain automatically for each step.',
+    body: 'Each step pays for itself along the way — nothing to manage.',
     accent: '#f59e0b',
   },
   {

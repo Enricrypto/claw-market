@@ -53,7 +53,7 @@ export default function LaunchCTASection() {
             Try ClawMind
           </m.a>
           <m.a
-            href='#how-it-works'
+            href='/pricing'
             className='px-8 py-3 border border-secondary/30 text-secondary font-inter font-medium text-sm tracking-widest uppercase rounded-sm'
             whileHover={{
               scale: 1.02,
@@ -63,7 +63,7 @@ export default function LaunchCTASection() {
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.15 }}
           >
-            Read the Docs
+            View Pricing
           </m.a>
         </m.div>
       </div>

@@ -4,40 +4,22 @@ import { m } from "framer-motion"
 
 const PRODUCTS = [
   {
-    tag: "Planning",
-    title: "AI Task Decomposition",
-    body: "Converts any natural language task into structured JSON subtasks with defined inputs, outputs, and service requirements.",
+    tag: "01",
+    title: "Describe Your Goal",
+    body: "Type what you need in plain language. No code, no config, no setup required.",
     accent: "#00e5ff"
   },
   {
-    tag: "Economics",
-    title: "Budget Control",
-    body: "Defines and enforces a maximum spend per workflow. Tasks are planned to fit the budget before execution begins.",
+    tag: "02",
+    title: "ClawMind Plans and Runs It",
+    body: "It breaks the task into steps, assigns the right tool to each one, and executes them in sequence — automatically.",
     accent: "#3aa8ff"
   },
   {
-    tag: "Efficiency",
-    title: "Cost Optimization",
-    body: "Selects the cheapest viable combination of services for each subtask. Efficiency is built into every plan.",
+    tag: "03",
+    title: "You Get the Result",
+    body: "One clean deliverable lands in your hands, plus a full breakdown of what it cost and what you earned.",
     accent: "#a855f7"
-  },
-  {
-    tag: "Payments",
-    title: "x402 Payments",
-    body: "Settles each subtask payment on-chain via ERC-4337 wallet abstraction. Atomic, trustless, and logged.",
-    accent: "#ff3b3b"
-  },
-  {
-    tag: "Output",
-    title: "Result Composition",
-    body: "Merges outputs from each subtask into a single coherent deliverable - report, dataset, content, or action.",
-    accent: "#f59e0b"
-  },
-  {
-    tag: "Revenue",
-    title: "Value Capture",
-    body: "ClawMind earns orchestration margin on every workflow. Coordination and intelligence have economic value.",
-    accent: "#ec4899"
   }
 ]
 
@@ -57,21 +39,17 @@ export default function HowItWorksSection() {
           transition={{ duration: 0.6 }}
         >
           <p className='font-inter text-[11px] font-medium text-accent tracking-[0.2em] uppercase mb-4'>
-            Capabilities
+            How It Works
           </p>
           <h2 className='font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl'>
-            What ClawMind
+            From goal to result,
             <br />
-            Orchestrates
+            automatically.
           </h2>
-          <p className='font-inter text-lg md:text-xl text-secondary leading-relaxed max-w-2xl mt-6'>
-            Six modular capabilities that compose into any autonomous economic
-            workflow - from a single API call to a full business operation.
-          </p>
         </m.div>
 
         {/* Product categories grid */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] rounded-sm overflow-hidden'>
+        <div className='grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/6 rounded-sm overflow-hidden'>
           {PRODUCTS.map((product, i) => (
             <m.div
               key={product.title}

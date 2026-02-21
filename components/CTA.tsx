@@ -12,7 +12,7 @@ export default function CTA() {
         whileTap={{ scale: 0.97 }}
         transition={{ duration: 0.15 }}
       >
-        Run Your First Task
+        Start Your First Workflow
       </m.a>
       <m.a
         href="#how-it-works"

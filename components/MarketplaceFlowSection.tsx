@@ -7,31 +7,31 @@ const STEPS = [
   {
     index: "01",
     title: "Plan",
-    body: "LLM decomposes your task into structured JSON subtasks with defined costs and service requirements.",
+    body: "ClawMind maps your task into a priced sequence of steps before anything runs.",
     accent: "#00e5ff"
   },
   {
     index: "02",
     title: "Execute",
-    body: "Each subtask is dispatched to the appropriate service endpoint in sequence.",
+    body: "Each step is sent to the right service and completes in order.",
     accent: "#3aa8ff"
   },
   {
     index: "03",
     title: "Pay",
-    body: "A 402 payment challenge is issued and settled on-chain via ERC-4337 for each subtask.",
+    body: "Each step pays for itself as it finishes. No batch invoices. No surprises.",
     accent: "#a855f7"
   },
   {
     index: "04",
     title: "Compose",
-    body: "Outputs from every subtask are merged into a single coherent deliverable.",
+    body: "Outputs from every step are merged into one clean deliverable.",
     accent: "#f59e0b"
   },
   {
     index: "05",
-    title: "Profit",
-    body: "ClawMind captures orchestration margin and reports the full cost breakdown and net gain.",
+    title: "Report",
+    body: "You receive a full breakdown: what was spent, what came back, and your net.",
     accent: "#ec4899"
   }
 ]

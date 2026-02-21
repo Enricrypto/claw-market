@@ -3,6 +3,7 @@ import Link from "next/link"
 
 const NAV_LINKS = [
   { label: "About", href: "#how-it-works" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Docs", href: "#flow" },
   { label: "GitHub", href: "#agents" },
   { label: "Terms", href: "#launch" }
