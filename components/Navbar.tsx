@@ -3,14 +3,14 @@ import Link from 'next/link'
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 h-16 border-b border-white/[0.05] bg-background/75 backdrop-blur-md">
+    <header className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 h-16 border-b border-white/5 bg-background/75 backdrop-blur-md">
       <Link href="/" className="flex items-center shrink-0">
         <Image
           src="/assets/logo.png"
-          alt="Claw Market"
-          width={851}
-          height={257}
-          className="h-8 w-auto object-contain"
+          alt="ClawMind"
+          width={536}
+          height={299}
+          className="h-11 w-auto object-contain"
           priority
         />
       </Link>

@@ -6,34 +6,34 @@ import Image from "next/image"
 const AGENTS = [
   {
     src: "/assets/base-agent.png",
-    name: "Content Agent",
-    role: "Content",
+    name: "/extract",
+    role: "Web & Docs",
     description:
-      "Writes copy, generates social media posts, and publishes on schedule. Sell AI content as a service or use it to grow your own channels.",
+      "Scrapes and parses any URL or document into structured data. Handles dynamic content and complex selectors.",
     accent: "#00e5ff"
   },
   {
     src: "/assets/trading-agent.png",
-    name: "Trading Agent",
-    role: "Finance",
+    name: "/fetch",
+    role: "Structured Data",
     description:
-      "Executes directional strategies automatically. Reads market signals and times entries - no manual intervention needed.",
+      "Queries external APIs and returns normalized JSON. Finance data, on-chain metrics, product databases - any source.",
     accent: "#ff3b3b"
   },
   {
     src: "/assets/compute-agent.png",
-    name: "Automation Agent",
-    role: "Workflows",
+    name: "/transform",
+    role: "LLM Operations",
     description:
-      "Handles repetitive tasks end-to-end: data collection, API calls, report generation, alerts. Set it once, run it forever.",
+      "Summarizes, analyzes, classifies, or generates text from any input. Plugs directly into the orchestration plan.",
     accent: "#a855f7"
   },
   {
     src: "/assets/high-reputation-agent.png",
-    name: "Pro Agent",
-    role: "Premium",
+    name: "/evaluate",
+    role: "Scoring",
     description:
-      "Verified by on-chain performance history. Takes on high-value contracts, coordinates complex multi-step tasks, and commands premium pricing.",
+      "Ranks and scores items against weighted criteria. Used for vendor selection, investment screening, and competitive analysis.",
     accent: "#f59e0b"
   }
 ]
@@ -54,17 +54,17 @@ export default function AgentsSection() {
           transition={{ duration: 0.6 }}
         >
           <p className='font-inter text-[11px] font-medium text-accent tracking-[0.2em] uppercase mb-4'>
-            Agent Network
+            Primitives
           </p>
           <h2 className='font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl'>
-            Purpose-Built Agents
+            Four Universal
             <br />
-            for Every Role
+            Building Blocks
           </h2>
         </m.div>
 
         {/* Grid */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] rounded-sm overflow-hidden'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/6 rounded-sm overflow-hidden'>
           {AGENTS.map((agent, i) => (
             <m.div
               key={agent.name}

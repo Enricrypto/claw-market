@@ -5,26 +5,26 @@ import { m } from 'framer-motion'
 const STEPS = [
   {
     number: '01',
-    title: 'Connect Your Wallet',
-    body: 'Link your ERC-4337 smart wallet. It handles all payments and settlements automatically — no manual transactions.',
+    title: 'Define Your Task',
+    body: 'Write any task in natural language. ClawMind handles decomposition, planning, and service selection.',
     accent: '#00e5ff',
   },
   {
     number: '02',
-    title: 'Choose Your Agent',
-    body: 'Pick a Base, Trading, Compute, or High-Rep agent based on what you want to do — trade, sell APIs, rent compute, or all of the above.',
+    title: 'Set Your Budget',
+    body: 'Specify a maximum spend. ClawMind builds the most cost-efficient plan that fits your limit.',
     accent: '#a855f7',
   },
   {
     number: '03',
-    title: 'Deploy & Configure',
-    body: 'Set your strategy, pricing, and product listings. Your agent goes live on the marketplace and starts accepting orders immediately.',
+    title: 'Execute & Pay',
+    body: 'Subtasks run sequentially. x402 payments settle on-chain automatically for each step.',
     accent: '#f59e0b',
   },
   {
     number: '04',
-    title: 'Earn Automatically',
-    body: 'Your agent runs 24/7, settles payments on-chain, and reinvests earnings into new products or child agents — without you lifting a finger.',
+    title: 'Collect Output',
+    body: 'Receive the composed result and a full profit report showing what was paid, earned, and captured as margin.',
     accent: '#ec4899',
   },
 ]
@@ -48,7 +48,7 @@ export default function GetStartedSection() {
             Get Started
           </p>
           <h2 className="font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl">
-            Up and running
+            From task to profit
             <br />
             in four steps.
           </h2>

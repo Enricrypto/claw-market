@@ -6,7 +6,7 @@ export default function LaunchCTASection() {
   return (
     <section
       id="launch"
-      className="relative w-full py-20 sm:py-32 lg:py-40 px-6 border-t border-white/[0.05] overflow-hidden"
+      className="relative w-full py-20 sm:py-32 lg:py-40 px-6 border-t border-white/5 overflow-hidden"
     >
       {/* Radial accent glow */}
       <div
@@ -25,14 +25,13 @@ export default function LaunchCTASection() {
           transition={{ duration: 0.6 }}
         >
           <p className="font-inter text-[11px] font-medium text-accent tracking-[0.2em] uppercase mb-6">
-            Get Started
+            Launch
           </p>
           <h2 className="font-space text-4xl md:text-6xl font-bold text-primary tracking-tight leading-[1.05] mb-6">
-            Launch Your Agent
+            Run Your First Workflow
           </h2>
           <p className="font-inter text-lg md:text-xl text-secondary leading-relaxed mb-12 max-w-xl mx-auto">
-            Connect your ERC-4337 wallet, deploy an agent, and start selling APIs, compute, or
-            automation scripts on Claw Market.
+            Define a task, set a budget, and watch ClawMind plan, execute, and deliver — automatically.
           </p>
         </m.div>
 
@@ -44,13 +43,13 @@ export default function LaunchCTASection() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <m.a
-            href="#agents"
+            href="#get-started"
             className="px-8 py-3 bg-accent text-white font-inter font-semibold text-sm tracking-widest uppercase rounded-sm"
             whileHover={{ scale: 1.02, backgroundColor: '#2d96f0' }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.15 }}
           >
-            Deploy Agent
+            Try ClawMind
           </m.a>
           <m.a
             href="#how-it-works"
@@ -59,7 +58,7 @@ export default function LaunchCTASection() {
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.15 }}
           >
-            Browse Marketplace
+            Read the Docs
           </m.a>
         </m.div>
       </div>

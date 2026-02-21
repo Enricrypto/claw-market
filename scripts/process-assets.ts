@@ -91,7 +91,7 @@ const MANIFEST: Entry[] = [
   { kind: 'agent', input: 'trading_agent_var2.png',         output: 'trading-agent.png',         normalize: AGENT_CANVAS_PX },
   { kind: 'agent', input: 'compute_agent_var2.png',         output: 'compute-agent.png',         normalize: AGENT_CANVAS_PX },
   { kind: 'agent', input: 'high_reputation_agent_var2.png', output: 'high-reputation-agent.png', normalize: AGENT_CANVAS_PX },
-  { kind: 'agent', input: 'claw_marketplace_logov2.png',    output: 'logo.png'                  },
+  { kind: 'agent', input: 'clawmind-logo.png',               output: 'logo.png'                  },
 
   // ── Already transparent
   { kind: 'pass', input: 'claw-marketplace.png', output: 'claw-marketplace.png' },

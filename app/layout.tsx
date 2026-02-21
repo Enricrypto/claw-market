@@ -18,9 +18,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Claw Market | Autonomous Capital Infrastructure",
+  title: "ClawMind | The Brain of Autonomous Commerce",
   description:
-    "A distributed network of intelligent agents coordinating liquidity, execution, and strategy across decentralized markets.",
+    "ClawMind is the orchestration intelligence layer that plans tasks, executes x402 payments, and composes results into autonomous economic workflows.",
   icons: {
     icon: "/assets/favicon.ico"
   }

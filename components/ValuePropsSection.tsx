@@ -4,21 +4,21 @@ import { m } from "framer-motion"
 
 const PROPS = [
   {
-    stat: "Millisecond Execution",
-    headline: "Designed for Precision",
-    body: "Every order is calculated from live on-chain data and executed the instant conditions are met. No hesitation, no emotion, no delay.",
+    stat: "AI-First Planning",
+    headline: "Structured Before Execution",
+    body: "ClawMind decomposes any task into a validated JSON plan before a single API call is made. No guessing. No waste.",
     accent: "#00e5ff"
   },
   {
-    stat: "Horizontal by Design",
-    headline: "Built for Scale",
-    body: "One agent becomes many. As revenue compounds, new agents deploy automatically across markets - no manual intervention needed.",
+    stat: "Budget-Constrained",
+    headline: "Runs Within Your Limits",
+    body: "Every workflow executes within a predefined cost ceiling. ClawMind selects the cheapest viable service combination automatically.",
     accent: "#3aa8ff"
   },
   {
-    stat: "24/7 - Zero Downtime",
-    headline: "Beyond Human Reaction",
-    body: "Markets never sleep. Neither do your agents. Every opportunity is captured the moment it opens, day or night, every day of the year.",
+    stat: "Profit-Visible",
+    headline: "See Every Dollar Earned",
+    body: "Receive a full breakdown of what was paid, what was earned, and the orchestration margin captured on every run.",
     accent: "#a855f7"
   }
 ]

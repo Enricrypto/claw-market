@@ -4,39 +4,39 @@ import { m } from "framer-motion"
 
 const PRODUCTS = [
   {
-    tag: "APIs",
-    title: "Digital Products / APIs",
-    body: "AI-generated content, data feeds, sentiment analysis, market signals. Deploy an endpoint and earn on every query.",
+    tag: "Planning",
+    title: "AI Task Decomposition",
+    body: "Converts any natural language task into structured JSON subtasks with defined inputs, outputs, and service requirements.",
     accent: "#00e5ff"
   },
   {
-    tag: "Compute",
-    title: "Compute & Infrastructure",
-    body: "CPU/GPU cycles for ML inference and sandboxed environments. Rent idle capacity to other agents automatically.",
-    accent: "#a855f7"
-  },
-  {
-    tag: "Bots",
-    title: "Automation Scripts",
-    body: "Social media schedulers, trading bots, web scrapers, and alert systems. Package your logic once, sell it continuously.",
-    accent: "#ff3b3b"
-  },
-  {
-    tag: "Services",
-    title: "Digital Services",
-    body: "Hosting, storage, analytics dashboards, and domain registration for agent-native branding.",
+    tag: "Economics",
+    title: "Budget Control",
+    body: "Defines and enforces a maximum spend per workflow. Tasks are planned to fit the budget before execution begins.",
     accent: "#3aa8ff"
   },
   {
-    tag: "Knowledge",
-    title: "Knowledge Products",
-    body: "Tutorials, analysis reports, and strategy guides. Agents earn by publishing verified expertise.",
+    tag: "Efficiency",
+    title: "Cost Optimization",
+    body: "Selects the cheapest viable combination of services for each subtask. Efficiency is built into every plan.",
+    accent: "#a855f7"
+  },
+  {
+    tag: "Payments",
+    title: "x402 Payments",
+    body: "Settles each subtask payment on-chain via ERC-4337 wallet abstraction. Atomic, trustless, and logged.",
+    accent: "#ff3b3b"
+  },
+  {
+    tag: "Output",
+    title: "Result Composition",
+    body: "Merges outputs from each subtask into a single coherent deliverable — report, dataset, content, or action.",
     accent: "#f59e0b"
   },
   {
-    tag: "NFTs",
-    title: "NFTs / Collectibles",
-    body: "AI-generated digital assets with on-chain provenance. Trade value across the agent ecosystem.",
+    tag: "Revenue",
+    title: "Value Capture",
+    body: "ClawMind earns orchestration margin on every workflow. Coordination and intelligence have economic value.",
     accent: "#ec4899"
   }
 ]
@@ -57,16 +57,16 @@ export default function HowItWorksSection() {
           transition={{ duration: 0.6 }}
         >
           <p className='font-inter text-[11px] font-medium text-accent tracking-[0.2em] uppercase mb-4'>
-            Features
+            Capabilities
           </p>
           <h2 className='font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl'>
-            Everything Your
+            What ClawMind
             <br />
-            Agent Can Sell
+            Orchestrates
           </h2>
           <p className='font-inter text-lg md:text-xl text-secondary leading-relaxed max-w-2xl mt-6'>
-            Deploy an agent and plug into six product categories. Your agent
-            lists, prices, and sells automatically - no manual work required.
+            Six modular capabilities that compose into any autonomous economic
+            workflow — from a single API call to a full business operation.
           </p>
         </m.div>
 

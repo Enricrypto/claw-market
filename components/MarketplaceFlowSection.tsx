@@ -6,32 +6,32 @@ import { m, AnimatePresence } from "framer-motion"
 const STEPS = [
   {
     index: "01",
-    title: "Discover",
-    body: "Consumer agents query the marketplace for available services, prices, and reputation scores.",
+    title: "Plan",
+    body: "LLM decomposes your task into structured JSON subtasks with defined costs and service requirements.",
     accent: "#00e5ff"
   },
   {
     index: "02",
-    title: "Purchase",
-    body: "A 402 payment challenge is issued and automatically settled via ERC-4337 wallet abstraction.",
+    title: "Execute",
+    body: "Each subtask is dispatched to the appropriate service endpoint in sequence.",
     accent: "#3aa8ff"
   },
   {
     index: "03",
-    title: "Deliver",
-    body: "Provider verifies payment and returns the product or API response. Transactions are logged on-chain.",
+    title: "Pay",
+    body: "A 402 payment challenge is issued and settled on-chain via ERC-4337 for each subtask.",
     accent: "#a855f7"
   },
   {
     index: "04",
-    title: "Reinvest",
-    body: "Earnings fund new compute sandboxes, products, domains, and market expansion - automatically.",
+    title: "Compose",
+    body: "Outputs from every subtask are merged into a single coherent deliverable.",
     accent: "#f59e0b"
   },
   {
     index: "05",
-    title: "Replicate",
-    body: "Parent agent spawns child agents that inherit wallet and mission, operating autonomously.",
+    title: "Profit",
+    body: "ClawMind captures orchestration margin and reports the full cost breakdown and net gain.",
     accent: "#ec4899"
   }
 ]
@@ -40,15 +40,15 @@ const STEPS = [
 
 function DiscoverVisual() {
   const cards = [
-    { label: "Market Predictions", price: "$0.05", accent: "#00e5ff" },
-    { label: "GPU Inference", price: "$0.12", accent: "#a855f7" },
-    { label: "Trading Bot", price: "$0.02", accent: "#ff3b3b" },
-    { label: "Market Report", price: "$0.08", accent: "#f59e0b" }
+    { label: "Extract pricing data", price: "$0.021", accent: "#00e5ff" },
+    { label: "Fetch market metrics", price: "$0.008", accent: "#a855f7" },
+    { label: "Transform → summary", price: "$0.012", accent: "#f59e0b" },
+    { label: "Evaluate & rank", price: "$0.007", accent: "#ec4899" }
   ]
   return (
     <div className='w-full h-full flex flex-col justify-center gap-5 p-8'>
       <p className='font-mono text-[11px] text-accent/60 tracking-widest'>
-        GET /marketplace/services
+        POST /plan
       </p>
       <div className='grid grid-cols-2 gap-3'>
         {cards.map((c, i) => (
@@ -77,10 +77,10 @@ function DiscoverVisual() {
 
 function PurchaseVisual() {
   const lines = [
-    { text: "POST /api/predictions", cls: "text-primary" },
-    { text: "◀ 402 Payment Required — $0.05 USDC", cls: "text-yellow-400" },
-    { text: "⬡ ERC-4337 wallet settling...", cls: "text-secondary" },
-    { text: "✓ Payment confirmed", cls: "text-green-400" }
+    { text: "DISPATCH /extract → pricing pages", cls: "text-primary" },
+    { text: "DISPATCH /fetch → market metrics", cls: "text-primary" },
+    { text: "DISPATCH /transform → summarize", cls: "text-primary" },
+    { text: "✓ All subtasks complete", cls: "text-green-400" }
   ]
   return (
     <div className='w-full h-full flex flex-col justify-center gap-4 p-8 font-mono'>
@@ -100,15 +100,15 @@ function PurchaseVisual() {
 }
 
 function DeliverVisual() {
-  const checks = ["Payment verified", "Data returned", "Logged on-chain"]
+  const checks = ["Payment issued", "Settled on-chain", "Receipt logged"]
   return (
     <div className='w-full h-full flex flex-col items-center justify-center gap-7 p-8'>
       <div className='flex items-center gap-6 w-full'>
         <div className='flex-1 flex flex-col items-center gap-2'>
           <div className='w-14 h-14 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-2xl'>
-            🤖
+            🔌
           </div>
-          <p className='font-inter text-[11px] text-secondary'>Provider</p>
+          <p className='font-inter text-[11px] text-secondary'>Service</p>
         </div>
         <div className='flex gap-2'>
           {[0, 1, 2].map((i) => (
@@ -122,9 +122,9 @@ function DeliverVisual() {
         </div>
         <div className='flex-1 flex flex-col items-center gap-2'>
           <div className='w-14 h-14 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-2xl'>
-            💼
+            🧠
           </div>
-          <p className='font-inter text-[11px] text-secondary'>Consumer</p>
+          <p className='font-inter text-[11px] text-secondary'>ClawMind</p>
         </div>
       </div>
       <div className='flex flex-col gap-2.5 w-full'>
@@ -146,16 +146,16 @@ function DeliverVisual() {
 
 function ReinvestVisual() {
   const targets = [
-    "Deploy new model",
-    "Spin up compute",
-    "Register domain",
-    "Expand market"
+    "Merge extractions",
+    "Apply transforms",
+    "Finalize report",
+    "Deliver output"
   ]
   return (
     <div className='w-full h-full flex flex-col justify-center gap-5 p-8'>
       <div>
         <div className='flex justify-between mb-2'>
-          <span className='font-inter text-[11px] text-secondary'>Revenue</span>
+          <span className='font-inter text-[11px] text-secondary'>Composition</span>
           <m.span
             className='font-space text-[11px]'
             style={{ color: "#f59e0b" }}
@@ -163,7 +163,7 @@ function ReinvestVisual() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1 }}
           >
-            +$12.40 USDC
+            Complete
           </m.span>
         </div>
         <div className='h-1.5 bg-white/6 rounded-full overflow-hidden'>
@@ -194,61 +194,42 @@ function ReinvestVisual() {
 }
 
 function ReplicateVisual() {
+  const rows = [
+    { label: "User paid", value: "$0.100", accent: "#ffffff" },
+    { label: "Services cost", value: "$0.021", accent: "#a855f7" },
+    { label: "Margin captured", value: "$0.079 (79%)", accent: "#ec4899" }
+  ]
   return (
-    <div className='w-full h-full flex flex-col items-center justify-center gap-5 p-8'>
-      <m.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className='w-16 h-16 rounded-full border-2 flex items-center justify-center'
-        style={{
-          borderColor: "#ec4899",
-          backgroundColor: "rgba(236,72,153,0.08)"
-        }}
-      >
-        <span
-          className='font-space text-[10px] font-bold'
-          style={{ color: "#ec4899" }}
-        >
-          PARENT
-        </span>
-      </m.div>
-      <m.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className='flex gap-10'
-      >
-        {["A", "B", "C"].map((label, i) => (
+    <div className='w-full h-full flex flex-col justify-center gap-6 p-8'>
+      <p className='font-mono text-[11px] text-accent/60 tracking-widest'>
+        PROFIT REPORT
+      </p>
+      <div className='flex flex-col gap-3'>
+        {rows.map((row, i) => (
           <m.div
-            key={label}
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 + i * 0.18 }}
-            className='flex flex-col items-center gap-1'
+            key={row.label}
+            initial={{ opacity: 0, x: -8 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 + i * 0.3 }}
+            className='flex justify-between items-center py-2.5 border-b border-white/6'
           >
-            <div className='w-px h-8 bg-white/15' />
-            <div
-              className='w-11 h-11 rounded-full border flex items-center justify-center'
-              style={{
-                borderColor: "rgba(236,72,153,0.3)",
-                backgroundColor: "rgba(236,72,153,0.05)"
-              }}
+            <span className='font-inter text-sm text-secondary'>{row.label}</span>
+            <span
+              className='font-space text-sm font-semibold'
+              style={{ color: row.accent }}
             >
-              <span className='font-space text-[11px] text-secondary'>
-                {label}
-              </span>
-            </div>
+              {row.value}
+            </span>
           </m.div>
         ))}
-      </m.div>
+      </div>
       <m.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className='font-inter text-[11px] text-secondary/50 text-center'
+        className='font-inter text-[11px] text-secondary/40'
       >
-        Inherit wallet + mission
+        Orchestration margin settled on-chain
       </m.p>
     </div>
   )
@@ -283,12 +264,12 @@ export default function MarketplaceFlowSection() {
           transition={{ duration: 0.6 }}
         >
           <p className='font-inter text-[11px] font-medium text-accent tracking-[0.2em] uppercase mb-4'>
-            Marketplace Flow
+            Orchestration Flow
           </p>
           <h2 className='font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl'>
-            How agents
+            From task to profit,
             <br />
-            interact.
+            automatically.
           </h2>
         </m.div>
 

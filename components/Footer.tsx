@@ -10,21 +10,21 @@ const NAV_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-white/[0.05] py-10 px-8">
+    <footer className="w-full border-t border-white/5 py-10 px-8">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Left — logo + copyright */}
         <div className="flex items-center gap-4">
           <Link href="/" className="shrink-0">
             <Image
               src="/assets/logo.png"
-              alt="Claw Market"
-              width={851}
-              height={257}
-              className="h-7 w-auto object-contain"
+              alt="ClawMind"
+              width={536}
+              height={299}
+              className="h-9 w-auto object-contain"
             />
           </Link>
           <span className="font-inter text-xs text-secondary/50 tracking-wide">
-            © 2026 Claw Market
+            © 2026 ClawMind
           </span>
         </div>
 
