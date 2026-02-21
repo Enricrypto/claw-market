@@ -376,18 +376,60 @@ async function processFavicon(rawDir: string, input: string): Promise<void> {
     .png()
     .toBuffer()
 
-  const trimmedPng = await sharp(maskedPng).trim().png().toBuffer()
+  // Trim and get raw pixels for analysis
+  const { data: tdata, info: tinfo } = await sharp(maskedPng)
+    .trim()
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true })
+  const tw = tinfo.width
+  const th = tinfo.height
+  const tpx = new Uint8Array(tdata)
 
-  // For landscape logotypes (icon + wordmark), crop to the left square
-  // so the favicon shows only the icon mark, not the full wordmark.
-  const trimMeta = await sharp(trimmedPng).metadata()
-  const iconPng =
-    (trimMeta.width ?? 0) > (trimMeta.height ?? 0)
-      ? await sharp(trimmedPng)
-          .extract({ left: 0, top: 0, width: trimMeta.height!, height: trimMeta.height! })
-          .png()
-          .toBuffer()
-      : trimmedPng
+  const trimmedPng = await sharp(Buffer.from(tdata), {
+    raw: { width: tw, height: th, channels: 4 },
+  })
+    .png()
+    .toBuffer()
+
+  // For landscape logotypes (icon + wordmark text), detect the icon mark by
+  // finding columns whose vertical span (distance from topmost to bottommost
+  // opaque pixel) is large relative to the full image height.  Text glyphs
+  // sit near one edge with a small span; the icon mark fills most of the height.
+  let iconPng: Buffer
+  if (tw > th) {
+    const SPAN_THRESHOLD = th * 0.5
+    let iconLeft = tw, iconRight = -1
+
+    for (let x = 0; x < tw; x++) {
+      let top = th, bot = -1
+      for (let y = 0; y < th; y++) {
+        if (tpx[(y * tw + x) * 4 + 3] > 30) {
+          if (y < top) top = y
+          if (y > bot) bot = y
+        }
+      }
+      if (bot >= 0 && bot - top >= SPAN_THRESHOLD) {
+        if (x < iconLeft)  iconLeft  = x
+        if (x > iconRight) iconRight = x
+      }
+    }
+
+    if (iconRight > iconLeft) {
+      // Centre a square crop (side = image height) on the detected icon bounds
+      const iconCx   = Math.round((iconLeft + iconRight) / 2)
+      const cropSize = th
+      const cropLeft = Math.max(0, Math.min(tw - cropSize, iconCx - Math.round(cropSize / 2)))
+      iconPng = await sharp(trimmedPng)
+        .extract({ left: cropLeft, top: 0, width: Math.min(cropSize, tw - cropLeft), height: th })
+        .png()
+        .toBuffer()
+    } else {
+      iconPng = trimmedPng
+    }
+  } else {
+    iconPng = trimmedPng
+  }
 
   const BG = { r: 0, g: 0, b: 0, alpha: 0 }
   const [png16, png32, png192] = await Promise.all([
