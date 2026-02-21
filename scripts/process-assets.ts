@@ -416,12 +416,12 @@ async function processFavicon(rawDir: string, input: string): Promise<void> {
     }
 
     if (iconRight > iconLeft) {
-      // Centre a square crop (side = image height) on the detected icon bounds
-      const iconCx   = Math.round((iconLeft + iconRight) / 2)
-      const cropSize = th
-      const cropLeft = Math.max(0, Math.min(tw - cropSize, iconCx - Math.round(cropSize / 2)))
+      // Crop exactly to the icon column bounds — excludes any wordmark text
+      // that sits outside those columns.  fit:'contain' at resize time will
+      // letterbox the non-square crop into a clean square canvas.
+      const iconW = iconRight - iconLeft + 1
       iconPng = await sharp(trimmedPng)
-        .extract({ left: cropLeft, top: 0, width: Math.min(cropSize, tw - cropLeft), height: th })
+        .extract({ left: iconLeft, top: 0, width: iconW, height: th })
         .png()
         .toBuffer()
     } else {
