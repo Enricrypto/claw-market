@@ -12,7 +12,7 @@ const PRODUCTS = [
   {
     tag: "02",
     title: "ClawMind Plans and Runs It",
-    body: "It breaks the task into steps, assigns the right tool to each one, and executes them in sequence — automatically.",
+    body: "It breaks the task into steps, assigns the right tool to each one, and executes them in sequence - automatically.",
     accent: "#3aa8ff"
   },
   {

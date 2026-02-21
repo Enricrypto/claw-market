@@ -18,7 +18,7 @@ const PROPS = [
   {
     stat: "Full Transparency",
     headline: "See Every Dollar, Every Run",
-    body: "Every workflow ends with a line-by-line breakdown — what was spent, what came back, and your net gain.",
+    body: "Every workflow ends with a line-by-line breakdown - what was spent, what came back, and your net gain.",
     accent: "#a855f7"
   }
 ]
