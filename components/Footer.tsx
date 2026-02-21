@@ -11,7 +11,7 @@ const NAV_LINKS = [
 export default function Footer() {
   return (
     <footer className="w-full border-t border-white/5 py-10 px-8">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         {/* Left — logo + copyright */}
         <div className="flex items-center gap-4">
           <Link href="/" className="shrink-0">
