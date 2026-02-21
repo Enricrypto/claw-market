@@ -34,7 +34,7 @@ export default function Hero() {
       <div className='relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto'>
         {/* ── Problem statement */}
         <m.p
-          className='font-inter text-sm sm:text-base text-secondary/60 max-w-lg mb-6 leading-relaxed drop-shadow-md'
+          className='font-inter text-sm sm:text-base text-secondary/90 max-w-lg mb-6 leading-relaxed drop-shadow-md'
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
@@ -79,28 +79,28 @@ export default function Hero() {
           <CTA />
         </m.div>
 
-        {/* ── ICP statement */}
-        <m.p
-          className='font-inter text-[11px] text-secondary/40 mt-8 tracking-wide drop-shadow-md'
+        {/* ── ICP + Trust badges */}
+        <m.div
+          className='flex flex-col items-center gap-4 mt-8'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.85 }}
         >
-          Built for developers and operators building AI automation workflows.
-        </m.p>
-
-        {/* ── Trust badges */}
-        <m.div
-          className='flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-4 font-inter text-[10px] text-secondary/35 tracking-widest uppercase drop-shadow-md'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1.05 }}
-        >
-          <span>★ 240+ early builders</span>
-          <span className='text-white/10'>·</span>
-          <span>Built on x402</span>
-          <span className='text-white/10'>·</span>
-          <span>Powered by Claude</span>
+          <p className='font-inter text-xs text-secondary/70 tracking-wide drop-shadow-md'>
+            Built for developers and operators building AI automation workflows.
+          </p>
+          <div className='flex flex-wrap items-center justify-center gap-2'>
+            {["★ 240+ builders", "Built on x402", "Powered by Claude"].map(
+              (badge) => (
+                <span
+                  key={badge}
+                  className='px-3 py-1 rounded-full border border-white/15 bg-black/30 font-inter text-[11px] text-secondary/75 tracking-wider backdrop-blur-sm'
+                >
+                  {badge}
+                </span>
+              )
+            )}
+          </div>
         </m.div>
       </div>
     </section>

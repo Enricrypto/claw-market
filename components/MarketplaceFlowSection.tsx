@@ -145,92 +145,103 @@ function DeliverVisual() {
 }
 
 function ReinvestVisual() {
-  const targets = [
-    "Merge extractions",
-    "Apply transforms",
-    "Finalize report",
-    "Deliver output"
+  const outputs = [
+    { label: "/extract", value: "47 data points", accent: "#00e5ff" },
+    { label: "/fetch", value: "12 live metrics", accent: "#ff3b3b" },
+    { label: "/transform", value: "800-word summary", accent: "#a855f7" },
+    { label: "/evaluate", value: "Top 5 ranked", accent: "#f59e0b" }
   ]
   return (
     <div className='w-full h-full flex flex-col justify-center gap-5 p-8'>
-      <div>
-        <div className='flex justify-between mb-2'>
-          <span className='font-inter text-[11px] text-secondary'>Composition</span>
-          <m.span
-            className='font-space text-[11px]'
-            style={{ color: "#f59e0b" }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.1 }}
-          >
-            Complete
-          </m.span>
-        </div>
-        <div className='h-1.5 bg-white/6 rounded-full overflow-hidden'>
+      <p className='font-mono text-[11px] text-accent/60 tracking-widest'>
+        DELIVERABLE
+      </p>
+      <div className='flex flex-col gap-1'>
+        {outputs.map((row, i) => (
           <m.div
-            className='h-full rounded-full'
-            style={{ backgroundColor: "#f59e0b" }}
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-          />
-        </div>
-      </div>
-      <div className='flex flex-col gap-2.5'>
-        {targets.map((t, i) => (
-          <m.div
-            key={t}
+            key={row.label}
             initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.2 + i * 0.2 }}
-            className='flex items-center gap-2 font-inter text-sm text-secondary'
+            transition={{ delay: 0.15 + i * 0.25 }}
+            className='flex justify-between items-center py-2 border-b border-white/6'
           >
-            <span style={{ color: "#f59e0b" }}>→</span> {t}
+            <span
+              className='font-mono text-sm'
+              style={{ color: row.accent }}
+            >
+              {row.label}
+            </span>
+            <span className='font-inter text-sm text-secondary'>
+              {row.value}
+            </span>
           </m.div>
         ))}
       </div>
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className='flex justify-between items-center pt-1'
+      >
+        <span className='font-inter text-sm font-semibold text-primary'>Report ready</span>
+        <span
+          className='font-space text-base font-bold'
+          style={{ color: "#f59e0b" }}
+        >
+          1 file
+        </span>
+      </m.div>
     </div>
   )
 }
 
 function ReplicateVisual() {
   const rows = [
-    { label: "User paid", value: "$0.100", accent: "#ffffff" },
-    { label: "Services cost", value: "$0.021", accent: "#a855f7" },
-    { label: "Margin captured", value: "$0.079 (79%)", accent: "#ec4899" }
+    { label: "/extract", value: "$0.021", accent: "#00e5ff" },
+    { label: "/fetch", value: "$0.008", accent: "#ff3b3b" },
+    { label: "/transform", value: "$0.012", accent: "#a855f7" },
+    { label: "/evaluate", value: "$0.007", accent: "#f59e0b" }
   ]
   return (
-    <div className='w-full h-full flex flex-col justify-center gap-6 p-8'>
+    <div className='w-full h-full flex flex-col justify-center gap-5 p-8'>
       <p className='font-mono text-[11px] text-accent/60 tracking-widest'>
-        PROFIT REPORT
+        COST REPORT
       </p>
-      <div className='flex flex-col gap-3'>
+      <div className='flex flex-col gap-1'>
         {rows.map((row, i) => (
           <m.div
             key={row.label}
             initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 + i * 0.3 }}
-            className='flex justify-between items-center py-2.5 border-b border-white/6'
+            transition={{ delay: 0.15 + i * 0.25 }}
+            className='flex justify-between items-center py-2 border-b border-white/6'
           >
-            <span className='font-inter text-sm text-secondary'>{row.label}</span>
             <span
-              className='font-space text-sm font-semibold'
+              className='font-mono text-sm'
               style={{ color: row.accent }}
             >
+              {row.label}
+            </span>
+            <span className='font-space text-sm font-semibold text-primary'>
               {row.value}
             </span>
           </m.div>
         ))}
       </div>
-      <m.p
+      <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className='font-inter text-[11px] text-secondary/40'
+        className='flex justify-between items-center pt-1'
       >
-        Orchestration margin settled on-chain
-      </m.p>
+        <span className='font-inter text-sm font-semibold text-primary'>Total</span>
+        <span
+          className='font-space text-base font-bold'
+          style={{ color: "#ec4899" }}
+        >
+          $0.048
+        </span>
+      </m.div>
     </div>
   )
 }

@@ -24,7 +24,7 @@ const STEPS = [
   {
     number: "04",
     title: "Collect Output",
-    body: "Receive the composed result and a full profit report showing what was paid, earned, and captured as margin.",
+    body: "Receive the composed result and a full cost breakdown showing exactly what each step ran and what the total came to.",
     accent: "#ec4899"
   }
 ]
@@ -48,7 +48,7 @@ export default function GetStartedSection() {
             Get Started
           </p>
           <h2 className='font-space text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-xl'>
-            From task to profit
+            From task to result
             <br />
             in four steps.
           </h2>
