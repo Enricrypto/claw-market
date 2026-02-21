@@ -1,5 +1,5 @@
 {
-  "name": "claw-market",
+  "name": "claw-mind",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "process-assets": "tsx scripts/process-assets.ts"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "framer-motion": "^12.34.2",
     "next": "16.1.6",
     "react": "19.2.3",
